@@ -9,8 +9,8 @@ global class SurveyInvitationEmail implements Database.Batchable<Contact> {
      
      global Iterable<Contact> start(Database.BatchableContext bc)
      {
-        
-     list<Contact> Conlist=[select id,Languages__c,FirstName from Contact where survey_date__c <=: date.today() And Email!=null  AND survey_date__c!=null limit 5000];
+     /** The Limit is set to 5 as in Developer org limit is 10 per days in Normal circumstances it will be set to 5000 **/ 
+     list<Contact> Conlist=[select id,Languages__c,FirstName from Contact where survey_date__c <=: date.today() And Email!=null  AND survey_date__c!=null limit 5];
      system.debug('******'+Conlist);        
      return Conlist;
      }
