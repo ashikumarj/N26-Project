@@ -1,0 +1,8 @@
+({
+    // Function called on initial page loading to get Products list from server
+	Prddetail : function(component, event, helper) {
+        // Helper function - fetchProducts called for interaction with server
+		helper.fetchPrd(component, event, helper);
+	}
+    
+})
